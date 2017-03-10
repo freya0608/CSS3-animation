@@ -28,7 +28,7 @@
             startMove(30);
         }
     };
-    timer = null;
+    var timer = null;
     var alpha = 30;
     function startMove(iTarget) {
         var oDiv = document.getElementById('div1');
@@ -43,7 +43,9 @@
             if(alpha == iTarget){
                 clearInterval(timer)
             }else {
-
+                alpha+=speed;
+                oDiv.style.filter = 'alpha(opacity:'+alpha+')';
+                oDiv.style.opacity = alpha/100;
             }
         },30)
     }
